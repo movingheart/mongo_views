@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongo Monitor Collection</title>
+</head>
+<body>
+<h1>Database: {{ database }}</h1>
+<span>Collections:</span>
+{% if col_list %}
+	<ul>
+		{% for col in col_list %}
+		<li><a href="/mongos/{{ database }}/{{ col.mongo_col }}">{{ col.mongo_col}}</a></li>
+        {% endfor %}
+	</ul>
+{% else %}
+	<p>No collection are available</p>
+{% endif %}
+</body>
+</html>

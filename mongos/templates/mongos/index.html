@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongo Monitor</title>
+</head>
+<body>
+
+{% if database_list %}
+	<ul>
+		{% for database in database_list %}
+{#		<li><a href="{% url 'mongos:detail' database.mongo_base %}">{{ database.mongo_base}}</a></li>#}
+		<li><a href="/mongos/{{ database.mongo_base }}">{{ database.mongo_base}}</a></li>
+
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No polls are available</p>
+{% endif %}
+
+</body>
+</html>
